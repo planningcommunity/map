@@ -21,21 +21,23 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const map = L.map("map").setView([39.0, -77.0], 5);
+    const map = L.map("map").setView([39.629152, -79.957313], 11);
 
-    const openStreetMap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '© OpenStreetMap contributors'
-    });
+    const openStreetMap = L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", 
+      {attribution: '© OpenStreetMap contributors'}
+    );
 
-    const esriSatellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
-      attribution: 'Tiles © Esri'
-    });
+    const stadia = L.tileLayer(
+      "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}", 
+      {attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a>'}
+    );
 
     openStreetMap.addTo(map);
 
     const baseMaps = {
       "OpenStreetMap": openStreetMap,
-      "ESRI Satellite": esriSatellite
+      "Stadia Maps": stadia
     };
 
     L.control.layers(baseMaps).addTo(map);
