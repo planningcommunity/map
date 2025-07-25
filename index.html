@@ -27,10 +27,6 @@
       attribution: '© OpenStreetMap contributors'
     });
 
-    const stamenToner = L.tileLayer("https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png", {
-      attribution: 'Map tiles by Stamen Design, CC BY 3.0 — Map data © OpenStreetMap contributors'
-    });
-
     const esriSatellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
       attribution: 'Tiles © Esri'
     });
@@ -39,7 +35,6 @@
 
     const baseMaps = {
       "OpenStreetMap": openStreetMap,
-      "Stamen Toner": stamenToner,
       "ESRI Satellite": esriSatellite
     };
 
